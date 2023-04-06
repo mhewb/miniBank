@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Bank {
 
     private final String bankName;
@@ -19,33 +17,39 @@ public class Bank {
                 '}';
     }
 
+    String getName() {
+        return this.bankName;
+    }
+
     void addClient(String clientName) {
         this.bankClients[nbOfClients] = new Client(clientName);
         nbOfClients++;
     }
 
-    String[] getClientsList() {
-        String[] clientsNames = new String[nbOfClients];
-        int i = 0;
-        for (Client client : this.bankClients) {
-            if (client == null) {
+    Client[] getClients() {
+        return this.bankClients;
+    }
+
+    Client getClientById(int id) {
+        return this.bankClients[id];
+    }
+
+    // TODO: move to Interactive Bank
+    void displayClientBalance(Client client) {
+        System.out.println(
+                "\n----------------------" +
+                "\nClient "
+                + client.getName()
+                + "\nTotal Balance: "
+                + client.getTotalBalance() +
+                "\nDetail:");
+        for (Account account: client.getClientAccounts()) {
+            if (account == null) {
                 break;
             }
-            clientsNames[i] = client.getName();
-            i++;
+            System.out.println(account);
         }
-        return clientsNames;
-    }
-
-    float getClientBalance(int idClient) {
-        return this.bankClients[idClient].getBalance();
-    }
-
-    void displayClientBalance(int idClient) {
-        System.out.println("Client "
-                + this.bankClients[idClient].getName()
-                + ", balance: "
-                + getClientBalance(idClient));
+        System.out.println("----------------------");
     }
 
     float getGeneralBalance() {
@@ -54,7 +58,7 @@ public class Bank {
             if (client == null) {
                 break;
             }
-            totalBalance += client.getBalance();
+            totalBalance += client.getTotalBalance();
         }
         return totalBalance;
     }
@@ -65,6 +69,8 @@ public class Bank {
             + " general balance:"
             + getGeneralBalance());
     }
+
+
 
 
 

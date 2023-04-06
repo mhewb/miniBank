@@ -8,8 +8,8 @@ public class Client {
 
     public Client(String clientName) {
         this.clientName = clientName;
-        this.clientAccounts = new Account[100];
-        this.clientAccounts[0] = new Account(0);
+        this.clientAccounts = new Account[5];
+        this.clientAccounts[0] = new Account();
         this.nbOfAccounts++;
     }
 
@@ -18,18 +18,56 @@ public class Client {
     public String toString() {
         return "Client{\n" +
                 "clientName='" + clientName + '\'' +
-                ",\nclientAccounts=" + Arrays.toString(clientAccounts) +
-                ",\nnbOfAccounts=" + nbOfAccounts +
+                "\nclientAccounts=" + Arrays.toString(clientAccounts) +
+                "\nnbOfAccounts=" + nbOfAccounts +
                 "\n}";
+    }
+
+    void bailOut() {
+        for (int i = 0; i < this.clientAccounts.length; i++) {
+            if (clientAccounts[i] == null) {
+                break;
+            }
+            if (clientAccounts[i].getBalance() < 0) {
+                System.out.println("");
+                System.out.println(clientAccounts[i]);
+                float amountToRecover = clientAccounts[i].getBalance();
+                for (Account account: clientAccounts) {
+                    if (account == null) {
+                        break;
+                    }
+
+                    if (account.getBalance() >= amountToRecover * -1) {
+                        System.out.println("Found an account to process bail out.");
+                        account.displayBalance();
+                        account.transfer(clientAccounts[i], amountToRecover);
+                    }
+                }
+
+
+            }
+        }
     }
 
     String getName() {
         return this.clientName;
     }
 
-    float getBalance() {
+    public Account[] getClientAccounts() {
+        return this.clientAccounts;
+    }
+
+    int getNbOfAccounts() {
+            return this.nbOfAccounts;
+    }
+
+    Account getAccountById(int id) {
+        return this.clientAccounts[id];
+    }
+
+    float getTotalBalance() {
         float totalBalance = 0.0f;
-        for (Account account: clientAccounts) {
+        for (Account account : clientAccounts) {
             if (account == null) {
                 break;
             }
@@ -43,7 +81,7 @@ public class Client {
     }
 
     void addAccount() {
-        clientAccounts[nbOfAccounts] = new Account(nbOfAccounts);
+        clientAccounts[nbOfAccounts] = new Account();
     }
 
     // void bailOut()
