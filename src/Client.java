@@ -29,7 +29,7 @@ public class Client {
                 break;
             }
             if (clientAccounts[i].getBalance() < 0) {
-                System.out.println("");
+                System.out.println("Account with negative balance found:");
                 System.out.println(clientAccounts[i]);
                 float amountToRecover = clientAccounts[i].getBalance();
                 for (Account account: clientAccounts) {
@@ -41,9 +41,10 @@ public class Client {
                         System.out.println("Found an account to process bail out.");
                         account.displayBalance();
                         account.transfer(clientAccounts[i], amountToRecover);
+                    } else {
+                        System.out.println("No account found to bail out this account.");
                     }
                 }
-
 
             }
         }
@@ -83,15 +84,5 @@ public class Client {
     void addAccount() {
         clientAccounts[nbOfAccounts] = new Account();
     }
-
-    // void bailOut()
-
-
-
-
-
-
-
-
 
 }

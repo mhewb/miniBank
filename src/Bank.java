@@ -70,9 +70,4 @@ public class Bank {
             + getGeneralBalance());
     }
 
-
-
-
-
-
 }

@@ -2,8 +2,6 @@ import java.util.UUID;
 
 public class Account {
 
-    //method to generates id based on key?
-
     private String id;
     private float balance;
 
@@ -21,16 +19,16 @@ public class Account {
         return this.id;
     }
 
+    float getBalance() {
+        return this.balance;
+    }
+
     void deposit(float amount) {
         this.balance += amount;
     }
 
     void withdrawal(float amount) {
         this.balance -= amount;
-    }
-
-    float getBalance() {
-        return this.balance;
     }
 
     void displayBalance() {

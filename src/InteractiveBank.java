@@ -3,14 +3,13 @@ import java.util.Scanner;
 public class InteractiveBank {
 
     // s.useLocale(Locale.US);
-    //TODO: move alla displays to here
+    //TODO: move all displays to here
 
     Scanner scan = new Scanner(System.in);
     int userInput;
 
     //TODO: add interactive Bank generation
     Bank theBank = new Bank("The Bank");
-
 
     void interact() {
 
@@ -59,8 +58,7 @@ public class InteractiveBank {
     Client interactSelectClient(){
         int idClient;
 
-        System.out.println(
-                "Select the client you want act on:");
+        System.out.println("Select the client you want act on:");
         Client[] clientsList = theBank.getClients();
 
         for (int i = 0; i < clientsList.length; i++) {
@@ -74,7 +72,6 @@ public class InteractiveBank {
         return theBank.getClientById(idClient);
 
         // TODO: if Client not exists
-
     }
 
     void interactOperateOnClient(Client client) {
