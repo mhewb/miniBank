@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Client {
 
     private final String clientName;
@@ -11,12 +13,29 @@ public class Client {
         this.nbOfAccounts++;
     }
 
+    // TODO: cut the number of displayed account when null
+    @Override
+    public String toString() {
+        return "Client{\n" +
+                "clientName='" + clientName + '\'' +
+                ",\nclientAccounts=" + Arrays.toString(clientAccounts) +
+                ",\nnbOfAccounts=" + nbOfAccounts +
+                "\n}";
+    }
+
     String getName() {
         return this.clientName;
     }
 
-    float getBalance(int index) {
-        return this.clientAccounts[index].getBalance();
+    float getBalance() {
+        float totalBalance = 0.0f;
+        for (Account account: clientAccounts) {
+            if (account == null) {
+                break;
+            }
+            totalBalance += account.getBalance();
+        }
+        return totalBalance;
     }
 
     void displayBalance(int index) {

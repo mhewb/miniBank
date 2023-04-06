@@ -135,7 +135,7 @@
 											"top": 78,
 											"width": 159,
 											"height": 13,
-											"text": "-id",
+											"text": "-id: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -152,7 +152,7 @@
 											"top": 93,
 											"width": 159,
 											"height": 13,
-											"text": "-balance",
+											"text": "-balance: float",
 											"horizontalAlignment": 0
 										}
 									],
@@ -360,7 +360,7 @@
 											"font": "Arial;13;1",
 											"left": 317,
 											"top": 55,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "Client"
 										},
@@ -395,7 +395,7 @@
 									"font": "Arial;13;0",
 									"left": 312,
 									"top": 48,
-									"width": 153,
+									"width": 185,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGHVZ3bApj639c="
@@ -432,9 +432,9 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 78,
-											"width": 143,
+											"width": 175,
 											"height": 13,
-											"text": "-clientName",
+											"text": "-clientName: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -449,9 +449,9 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 93,
-											"width": 143,
+											"width": 175,
 											"height": 13,
-											"text": "-clientAccounts",
+											"text": "-clientAccounts: tab Account",
 											"horizontalAlignment": 0
 										},
 										{
@@ -466,9 +466,9 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 108,
-											"width": 143,
+											"width": 175,
 											"height": 13,
-											"text": "-nbOfAccounts",
+											"text": "-nbOfAccounts: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -493,7 +493,7 @@
 									"font": "Arial;13;0",
 									"left": 312,
 									"top": 73,
-									"width": 153,
+									"width": 185,
 									"height": 53
 								},
 								{
@@ -518,7 +518,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 131,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "+getName()",
 											"horizontalAlignment": 0
@@ -535,7 +535,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 146,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "+getBalance()",
 											"horizontalAlignment": 0
@@ -552,7 +552,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 161,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "+displayBalance()",
 											"horizontalAlignment": 0
@@ -569,7 +569,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 176,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "+addAccount()",
 											"horizontalAlignment": 0
@@ -586,7 +586,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 191,
-											"width": 143,
+											"width": 175,
 											"height": 13,
 											"text": "+bailOut()",
 											"horizontalAlignment": 0
@@ -595,7 +595,7 @@
 									"font": "Arial;13;0",
 									"left": 312,
 									"top": 126,
-									"width": 153,
+									"width": 185,
 									"height": 83
 								},
 								{
@@ -635,7 +635,7 @@
 							"containerChangeable": true,
 							"left": 312,
 							"top": 48,
-							"width": 153,
+							"width": 185,
 							"height": 193,
 							"nameCompartment": {
 								"$ref": "AAAAAAGHVZ3bApj590w="
@@ -2200,7 +2200,8 @@
 								"$ref": "AAAAAAGHVZVjTJiCBIw="
 							},
 							"name": "id",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2209,7 +2210,8 @@
 								"$ref": "AAAAAAGHVZVjTJiCBIw="
 							},
 							"name": "balance",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "float"
 						}
 					],
 					"operations": [
@@ -2342,7 +2344,8 @@
 								"$ref": "AAAAAAGHVZ3bAZj2S9Q="
 							},
 							"name": "clientName",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2351,7 +2354,8 @@
 								"$ref": "AAAAAAGHVZ3bAZj2S9Q="
 							},
 							"name": "clientAccounts",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "tab Account"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2360,7 +2364,8 @@
 								"$ref": "AAAAAAGHVZ3bAZj2S9Q="
 							},
 							"name": "nbOfAccounts",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",
