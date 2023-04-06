@@ -2,4 +2,4 @@
 .history
 .idea
 *.iml
-.out
+out
