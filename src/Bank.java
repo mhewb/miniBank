@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Bank {
 
     private final String bankName;
@@ -9,9 +11,30 @@ public class Bank {
         this.bankClients = new Client[100];
     }
 
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "\nbankName='" + bankName + '\'' +
+                "\nnbOfClients=" + nbOfClients +
+                '}';
+    }
+
     void addClient(String clientName) {
         this.bankClients[nbOfClients] = new Client(clientName);
         nbOfClients++;
+    }
+
+    String[] getClientsList() {
+        String[] clientsNames = new String[nbOfClients];
+        int i = 0;
+        for (Client client : this.bankClients) {
+            if (client == null) {
+                break;
+            }
+            clientsNames[i] = client.getName();
+            i++;
+        }
+        return clientsNames;
     }
 
     float getClientBalance(int idClient) {
