@@ -2,10 +2,10 @@ public class Account {
 
     //method to generates id based on key?
 
-    private String id;
+    private int id;
     private float balance;
 
-    public Account(String id) {
+    public Account(int id) {
         this.id = id;
         this.balance = 0.0f;
     }
@@ -22,7 +22,7 @@ public class Account {
         return this.balance;
     }
 
-    void displayBalance {
+    void displayBalance() {
         System.out.println("Account(" + this.id + ") balance: " + this.balance);
     }
 
